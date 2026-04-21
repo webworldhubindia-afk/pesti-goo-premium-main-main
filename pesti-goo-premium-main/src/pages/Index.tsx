@@ -4,6 +4,14 @@ import { Shield, Award, Users, CheckCircle, Star, ArrowRight, Bug, Rat, Zap } fr
 import Layout from '@/components/Layout';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import heroImg from '@/assets/hero-1.jpg';
+import whatsappImg1 from '@/assets/about-us.jpg';
+import whatsappImg2 from '@/assets/team-group.jpg';
+import certificate1 from '@/assets/certificate-1.jpeg';
+import certificate2 from '@/assets/certificate-2.jpeg';
+import pestControl1 from '@/assets/pest-control-1.jpg';
+import pestControl2 from '@/assets/pest-control-2.jpg';
+import pestControl3 from '@/assets/pest-control-3.jpg';
+import whatsappBanner from '@/assets/whatsapp-banner.jpeg';
 
 const stats = [
   { label: 'Happy Customers', value: 1200, suffix: '+' },
@@ -114,6 +122,45 @@ const Index = () => {
         </div>
       </section>
 
+      {/* WhatsApp Banner */}
+      <section className="py-16 md:py-20 bg-gradient-to-r from-secondary/10 via-primary/5 to-secondary/10">
+        <div className="container-custom px-4">
+          <div className="max-w-5xl mx-auto animate-reveal">
+            <div className="relative group">
+              {/* Decorative Elements */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-secondary/20 via-primary/20 to-secondary/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+              
+              {/* Main Image Container */}
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white dark:border-gray-800">
+                <img 
+                  src={whatsappBanner} 
+                  alt="Pestigo Pest Control Professional Service" 
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+                
+                {/* Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Corner Decorations */}
+                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-secondary/30 to-transparent rounded-br-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-secondary/30 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              
+              {/* Floating Badge */}
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
+                <div className="bg-white dark:bg-gray-900 px-8 py-4 rounded-full shadow-xl border-2 border-secondary/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+                    <span className="text-sm font-bold text-gray-800 dark:text-white">Professional Pest Control Services</span>
+                    <div className="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Preview */}
       <section className="section-padding">
         <div className="container-custom">
@@ -141,6 +188,87 @@ const Index = () => {
                 <img src={heroImg} alt="Pest control service" className="w-full h-80 object-cover" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Professional Service Gallery */}
+      <section className="section-padding bg-gradient-to-br from-secondary/5 via-primary/5 to-accent/5">
+        <div className="container-custom">
+          <div className="text-center mb-12 animate-reveal">
+            <span className="text-secondary text-sm font-semibold uppercase tracking-wider">Our Work</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Professional Pest Control in Action</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">See our expert technicians delivering top-quality pest control services across South Delhi.</p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Large Featured Image */}
+            <div className="lg:col-span-2 animate-reveal-left group">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl h-96 lg:h-[500px]">
+                <img 
+                  src={pestControl1} 
+                  alt="Professional pest control technician at work" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-white text-xl font-bold mb-2">Expert Treatment</h3>
+                    <p className="text-white/90 text-sm">Our trained professionals using advanced equipment</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 left-4 px-4 py-2 bg-secondary/90 backdrop-blur-sm rounded-full">
+                  <span className="text-white text-xs font-bold">Featured</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Side Images Stack */}
+            <div className="flex flex-col gap-6">
+              <div className="animate-reveal-right group">
+                <div className="relative overflow-hidden rounded-2xl shadow-xl h-48 lg:h-[240px]">
+                  <img 
+                    src={pestControl2} 
+                    alt="Pest control worker with protective gear" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <p className="text-white text-sm font-semibold">Safety First Approach</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="animate-reveal-right group" style={{ animationDelay: '0.2s' }}>
+                <div className="relative overflow-hidden rounded-2xl shadow-xl h-48 lg:h-[240px]">
+                  <img 
+                    src={pestControl3} 
+                    alt="Pest control service in residential area" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <p className="text-white text-sm font-semibold">Residential & Commercial</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats Overlay */}
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 animate-reveal">
+            {[
+              { number: '1200+', label: 'Happy Clients' },
+              { number: '3500+', label: 'Projects Done' },
+              { number: '5+', label: 'Years Experience' },
+              { number: '100%', label: 'Satisfaction' },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-card rounded-xl p-4 text-center shadow-md border border-border hover:shadow-lg transition-shadow">
+                <p className="text-2xl md:text-3xl font-bold text-secondary mb-1">{stat.number}</p>
+                <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -195,6 +323,52 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Certificates Banner */}
+      <section className="section-padding bg-gradient-to-br from-secondary/5 via-primary/5 to-secondary/5">
+        <div className="container-custom">
+          <div className="text-center mb-12 animate-reveal">
+            <span className="text-secondary text-sm font-semibold uppercase tracking-wider">Certifications</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Government Registered & Certified</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Our certifications demonstrate our commitment to professional standards and quality service delivery.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="animate-reveal-left group">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-4 border-2 border-secondary/20 hover:border-secondary/50 transition-all duration-300">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-primary to-secondary"></div>
+                <div className="relative overflow-hidden rounded-xl">
+                  <img 
+                    src={certificate1} 
+                    alt="Government Certificate 1" 
+                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-secondary/10 rounded-full blur-xl group-hover:bg-secondary/20 transition-all"></div>
+              </div>
+            </div>
+            <div className="animate-reveal-right group">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-4 border-2 border-secondary/20 hover:border-secondary/50 transition-all duration-300">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-primary to-secondary"></div>
+                <div className="relative overflow-hidden rounded-xl">
+                  <img 
+                    src={certificate2} 
+                    alt="Government Certificate 2" 
+                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-secondary/10 rounded-full blur-xl group-hover:bg-secondary/20 transition-all"></div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-10 animate-reveal">
+            <Link to="/certificates" className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-primary-foreground rounded-xl font-semibold hover:bg-secondary/90 transition-all shadow-lg hover:shadow-xl active:scale-[0.97]">
+              View All Certificates <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="section-padding hero-gradient">
         <div className="container-custom">
@@ -214,6 +388,38 @@ const Index = () => {
                 <p className="text-primary-foreground font-semibold text-sm">{t.name}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Image Gallery */}
+      <section className="section-padding bg-card">
+        <div className="container-custom">
+          <div className="text-center mb-12 animate-reveal">
+            <span className="text-secondary text-sm font-semibold uppercase tracking-wider">Our Work</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">See Our Professional Service in Action</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="animate-reveal-left group">
+              <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                <img 
+                  src={whatsappImg1} 
+                  alt="Professional pest control service" 
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </div>
+            <div className="animate-reveal-right group">
+              <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                <img 
+                  src={whatsappImg2} 
+                  alt="Pest control treatment" 
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

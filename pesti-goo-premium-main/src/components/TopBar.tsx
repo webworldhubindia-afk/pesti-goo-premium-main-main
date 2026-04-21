@@ -10,6 +10,12 @@ const TopBar = () => {
           <span className="opacity-90">UDYAM: UDYAM-DL-08-0121120</span>
         </div>
         <div className="flex items-center gap-3 md:gap-5">
+          <a href="mailto:Infio@pestigopestcontrol.co.in" className="flex items-center gap-1 hover:text-secondary transition-colors">
+            <Mail size={13} /> Infio@pestigopestcontrol.co.in
+          </a>
+          <a href="tel:6205840761" className="flex items-center gap-1 hover:text-secondary transition-colors">
+            <Phone size={13} /> 6205840761
+          </a>
           <a href="tel:9955562637" className="flex items-center gap-1 hover:text-secondary transition-colors">
             <Phone size={13} /> 9955562637
           </a>

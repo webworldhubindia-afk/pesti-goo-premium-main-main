@@ -7,7 +7,6 @@ const navItems = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Services', path: '/services' },
-  { label: 'Digital Services', path: '/digital-services' },
   { label: 'Team', path: '/team' },
   { label: 'Certificates', path: '/certificates' },
   { label: 'Contact', path: '/contact' },
@@ -21,7 +20,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-card shadow-md">
       <div className="container-custom flex items-center justify-between py-3 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Pestigo Pest Control" className="h-12 w-12 object-contain" />
+          <img src={logo} alt="Pestigo Pest Control" className="h-14 w-14 object-contain" />
           <div className="leading-tight">
             <span className="text-lg font-bold text-primary tracking-tight">Pestigo</span>
             <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Pest Control</span>

@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import DigitalServices from "./pages/DigitalServices";
 import Team from "./pages/Team";
 import Certificates from "./pages/Certificates";
 import Contact from "./pages/Contact";
@@ -30,7 +29,6 @@ const AppRoutes = () => {
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/digital-services" element={<DigitalServices />} />
         <Route path="/team" element={<Team />} />
         <Route path="/certificates" element={<Certificates />} />
         <Route path="/contact" element={<Contact />} />

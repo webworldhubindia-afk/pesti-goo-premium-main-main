@@ -50,7 +50,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-sm">Phone</p>
-                    <a href="tel:9955562637" className="text-muted-foreground text-sm hover:text-secondary transition-colors">9955562637</a>
+                    <a href="tel:6205840761" className="text-muted-foreground text-sm hover:text-secondary transition-colors block">6205840761</a>
+                    <a href="tel:9955562637" className="text-muted-foreground text-sm hover:text-secondary transition-colors block mt-1">9955562637</a>
                   </div>
                 </div>
                 <div className="flex gap-3 items-start">
@@ -59,7 +60,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-sm">Email</p>
-                    <a href="mailto:pestigopestc@gmail.com" className="text-muted-foreground text-sm hover:text-secondary transition-colors">pestigopestc@gmail.com</a>
+                    <a href="mailto:pestigopestc@gmail.com" className="text-muted-foreground text-sm hover:text-secondary transition-colors block">pestigopestc@gmail.com</a>
+                    <a href="mailto:Infio@pestigopestcontrol.co.in" className="text-muted-foreground text-sm hover:text-secondary transition-colors block mt-1">Infio@pestigopestcontrol.co.in</a>
                   </div>
                 </div>
               </div>
@@ -68,14 +70,24 @@ const Contact = () => {
               <div className="rounded-xl overflow-hidden shadow-md border border-border">
                 <iframe
                   title="Pestigo Pest Control Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.8!2d77.25!3d28.51!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sTughlaqabad%2C+South+Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps?q=Pestigo+Pest+Control+Tughlaqabad+South+Delhi&output=embed&z=15"
                   width="100%"
-                  height="280"
+                  height="350"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
+              </div>
+              <div className="mt-3">
+                <a 
+                  href="https://share.google/tx2mTFAvdVNVtJaIL" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-secondary font-medium hover:underline text-sm"
+                >
+                  <MapPin size={16} /> View on Google Maps
+                </a>
               </div>
             </div>
 

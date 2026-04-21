@@ -35,7 +35,7 @@ const Footer = () => {
         <div>
           <h3 className="text-base font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2">
-            {['Home', 'About', 'Services', 'Digital Services', 'Team', 'Certificates', 'Contact'].map((item) => (
+            {['Home', 'About', 'Services', 'Team', 'Certificates', 'Contact'].map((item) => (
               <li key={item}>
                 <Link
                   to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
@@ -70,11 +70,17 @@ const Footer = () => {
               <MapPin size={16} className="mt-0.5 shrink-0 text-secondary" />
               <span className="opacity-80">Plot No. F/F 483 Ground Floor, Nearby Pracheen Shiv Mandir, Tughlaqabad, South Delhi, Delhi 110062</span>
             </div>
+            <a href="tel:6205840761" className="flex gap-2 items-center opacity-80 hover:text-secondary transition-colors">
+              <Phone size={16} className="text-secondary" /> 6205840761
+            </a>
             <a href="tel:9955562637" className="flex gap-2 items-center opacity-80 hover:text-secondary transition-colors">
               <Phone size={16} className="text-secondary" /> 9955562637
             </a>
             <a href="mailto:pestigopestc@gmail.com" className="flex gap-2 items-center opacity-80 hover:text-secondary transition-colors">
               <Mail size={16} className="text-secondary" /> pestigopestc@gmail.com
+            </a>
+            <a href="mailto:Infio@pestigopestcontrol.co.in" className="flex gap-2 items-center opacity-80 hover:text-secondary transition-colors">
+              <Mail size={16} className="text-secondary" /> Infio@pestigopestcontrol.co.in
             </a>
           </div>
         </div>
