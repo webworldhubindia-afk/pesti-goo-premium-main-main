@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Award, Users, CheckCircle, Star, ArrowRight, Bug, Rat, Zap } from 'lucide-react';
+import { Shield, Award, Users, CheckCircle, Star, ArrowRight, Bug, Rat, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import heroImg from '@/assets/hero-1.jpg';
-import whatsappImg1 from '@/assets/about-us.jpg';
+import whatsappImg1 from '@/assets/about-team.jpg';
 import whatsappImg2 from '@/assets/team-group.jpg';
 import certificate1 from '@/assets/certificate-1.jpeg';
 import certificate2 from '@/assets/certificate-2.jpeg';
+import certificate3 from '@/assets/certificate-3.jpeg';
+import certificate4 from '@/assets/certificate-4.jpeg';
+import certificate5 from '@/assets/certificate-5.jpeg';
+import certificate6 from '@/assets/certificate-6.jpeg';
 import pestControl1 from '@/assets/pest-control-1.jpg';
 import pestControl2 from '@/assets/pest-control-2.jpg';
 import pestControl3 from '@/assets/pest-control-3.jpg';
@@ -66,40 +69,90 @@ const CountUp = ({ target, suffix }: { target: number; suffix: string }) => {
   return <div ref={ref} className="text-3xl md:text-4xl font-bold text-secondary">{count}{suffix}</div>;
 };
 
+const Typewriter = ({ text, delay = 50, startDelay = 0 }: { text: string; delay?: number; startDelay?: number }) => {
+  const [currentText, setCurrentText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const startTimer = setTimeout(() => {
+      setStarted(true);
+    }, startDelay);
+    return () => clearTimeout(startTimer);
+  }, [startDelay]);
+
+  useEffect(() => {
+    if (!started || currentIndex >= text.length) return;
+
+    const timeout = setTimeout(() => {
+      setCurrentText(prev => prev + text[currentIndex]);
+      setCurrentIndex(prev => prev + 1);
+    }, delay);
+
+    return () => clearTimeout(timeout);
+  }, [currentIndex, delay, text, started]);
+
+  return <span>{currentText}</span>;
+};
+
 const Index = () => {
   useScrollReveal();
+  const [currentCertSlide, setCurrentCertSlide] = useState(0);
+  
+  const certificates = [
+    { src: certificate1, alt: 'Government Certificate 1' },
+    { src: certificate2, alt: 'Government Certificate 2' },
+    { src: certificate3, alt: 'Government Certificate 3' },
+    { src: certificate4, alt: 'Government Certificate 4' },
+    { src: certificate5, alt: 'Government Certificate 5' },
+    { src: certificate6, alt: 'Government Certificate 6' },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentCertSlide((prev) => (prev + 1) % certificates.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [certificates.length]);
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="Professional pest control service" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 hero-gradient opacity-80" />
+          <img 
+            src="https://simplybirding.co.za/wp-content/uploads/2025/02/Pest-control.jpg" 
+            alt="Professional pest control service" 
+            className="w-full h-full object-cover" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/50 to-transparent" />
         </div>
+        
         <div className="relative z-10 container-custom px-4 py-20 md:py-32">
           <div className="max-w-2xl">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary text-sm font-medium mb-6 animate-count-up">
-              Government Registered & Certified
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6" style={{ lineHeight: '1.1' }}>
-              Protect Your Home From Unwanted Pests
+            <div className="min-h-[28px] mb-6">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border border-white/30">
+                <Typewriter text="Government Registered & Certified" delay={40} startDelay={300} />
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 min-h-[120px] md:min-h-[140px]" style={{ lineHeight: '1.1' }}>
+              <Typewriter text="Protect Your Home From Unwanted Pests" delay={50} startDelay={1500} />
             </h1>
-            <p className="text-lg text-primary-foreground/80 mb-8 max-w-lg">
-              Professional pest control services in South Delhi. Safe, effective, and affordable solutions for your home and business.
+            <p className="text-lg text-white/90 mb-8 max-w-lg min-h-[60px]">
+              <Typewriter text="Professional pest control services in Delhi NCR. Safe, effective, and affordable solutions for your home and business." delay={35} startDelay={3500} />
             </p>
             <div className="flex flex-wrap gap-4">
               <a
                 href="tel:9955562637"
-                className="px-8 py-4 cta-gradient text-primary-foreground rounded-xl font-semibold shadow-lg shadow-secondary/30 hover:shadow-secondary/50 transition-all active:scale-[0.97]"
+                className="px-8 py-4 cta-gradient text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all active:scale-[0.97]"
               >
-                Call Now — 9955562637
+                Call Now 
               </a>
               <a
                 href="https://wa.me/919955562637"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-primary-foreground/10 border border-primary-foreground/30 text-primary-foreground rounded-xl font-semibold hover:bg-primary-foreground/20 transition-all active:scale-[0.97] backdrop-blur-sm"
+                className="px-8 py-4 bg-white/20 backdrop-blur-sm border border-white/40 text-white rounded-xl font-semibold hover:bg-white/30 transition-all active:scale-[0.97]"
               >
                 WhatsApp Us
               </a>
@@ -167,9 +220,9 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-reveal-left">
               <span className="text-secondary text-sm font-semibold uppercase tracking-wider">About Us</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Trusted Pest Control Experts in South Delhi</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Trusted Pest Control Experts in Delhi NCR</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Pestigo Pest Control is a government-registered pest management company serving residential and commercial properties across South Delhi. With a team of trained technicians and eco-friendly solutions, we ensure complete pest elimination.
+                Pestigo Pest Control is a government-registered pest management company serving residential and commercial properties across Delhi NCR. With a team of trained technicians and eco-friendly solutions, we ensure complete pest elimination.
               </p>
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {['Licensed & Certified', 'Eco-Friendly Products', 'Trained Technicians', '24/7 Support'].map((item) => (
@@ -184,8 +237,12 @@ const Index = () => {
               </Link>
             </div>
             <div className="animate-reveal-right">
-              <div className="rounded-2xl overflow-hidden shadow-xl">
-                <img src={heroImg} alt="Pest control service" className="w-full h-80 object-cover" />
+              <div className="relative">
+                <div className="rounded-2xl overflow-hidden shadow-xl">
+                  <img src={whatsappImg1} alt="Pest control experts team" className="w-full h-80 object-cover" />
+                </div>
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary/20 rounded-full blur-3xl"></div>
+                <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
               </div>
             </div>
           </div>
@@ -198,7 +255,7 @@ const Index = () => {
           <div className="text-center mb-12 animate-reveal">
             <span className="text-secondary text-sm font-semibold uppercase tracking-wider">Our Work</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Professional Pest Control in Action</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">See our expert technicians delivering top-quality pest control services across South Delhi.</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto">See our expert technicians delivering top-quality pest control services across Delhi NCR.</p>
           </div>
           
           <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -240,11 +297,11 @@ const Index = () => {
               </div>
               
               <div className="animate-reveal-right group" style={{ animationDelay: '0.2s' }}>
-                <div className="relative overflow-hidden rounded-2xl shadow-xl h-48 lg:h-[240px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-xl h-72 lg:h-[400px]">
                   <img 
                     src={pestControl3} 
                     alt="Pest control service in residential area" 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                    className="w-full h-full object-contain bg-gray-100 transition-transform duration-500 group-hover:scale-110" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -277,18 +334,29 @@ const Index = () => {
       <section className="section-padding section-light">
         <div className="container-custom">
           <div className="text-center mb-12 animate-reveal">
-            <span className="text-secondary text-sm font-semibold uppercase tracking-wider">Our Services</span>
+            <span className="text-primary text-sm font-semibold uppercase tracking-wider">Our Services</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">Professional Pest Control Solutions</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
-              <div key={service.title} className="animate-reveal bg-card rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow border border-border group">
-                <div className="w-12 h-12 rounded-lg cta-gradient flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                  <service.icon size={24} className="text-primary-foreground" />
+            {[
+              { icon: '/temp-images/pest-icon-1.png', title: 'Cockroach Control', desc: 'Advanced gel and spray treatments to eliminate cockroach infestations completely.' },
+              { icon: '/temp-images/pest-icon-2.png', title: 'Termite Control', desc: 'Pre and post-construction anti-termite treatment for lasting protection.' },
+              { icon: '/temp-images/pest-icon-3.png', title: 'Bed Bug Control', desc: 'Chemical and heat treatments to eradicate bed bugs from your property.' },
+              { icon: '/temp-images/pest-icon-4.png', title: 'Mosquito Control', desc: 'Fogging and larvicide treatments to create a mosquito-free environment.' },
+              { icon: '/temp-images/pest-icon-5.png', title: 'Rodent Control', desc: 'Professional trapping and exclusion services for rat and mice problems.' },
+              { icon: '/temp-images/pest-icon-6.png', title: 'General Pest Control', desc: 'Comprehensive multi-pest treatment for homes and offices.' },
+            ].map((service, index) => (
+              <div key={service.title} className="animate-reveal bg-card rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all border-2 border-primary/10 hover:border-primary/30 group hover:-translate-y-2">
+                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border-2 border-primary/20">
+                  <img 
+                    src={service.icon} 
+                    alt={service.title} 
+                    className="w-12 h-12 object-contain" 
+                  />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{service.desc}</p>
-                <Link to="/services" className="text-secondary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+                <h3 className="text-lg font-bold text-center mb-3 text-foreground group-hover:text-primary transition-colors">{service.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 text-center">{service.desc}</p>
+                <Link to="/services" className="text-primary text-sm font-semibold inline-flex items-center justify-center gap-1 hover:gap-2 transition-all w-full">
                   Learn More <ArrowRight size={14} />
                 </Link>
               </div>
@@ -323,46 +391,91 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Certificates Banner */}
-      <section className="section-padding bg-gradient-to-br from-secondary/5 via-primary/5 to-secondary/5">
+      {/* Certificates Slider Section */}
+      <section className="section-padding bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5">
         <div className="container-custom">
           <div className="text-center mb-12 animate-reveal">
-            <span className="text-secondary text-sm font-semibold uppercase tracking-wider">Certifications</span>
+            <span className="text-primary text-sm font-semibold uppercase tracking-wider">Certifications</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Government Registered & Certified</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">Our certifications demonstrate our commitment to professional standards and quality service delivery.</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="animate-reveal-left group">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-4 border-2 border-secondary/20 hover:border-secondary/50 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-primary to-secondary"></div>
-                <div className="relative overflow-hidden rounded-xl">
-                  <img 
-                    src={certificate1} 
-                    alt="Government Certificate 1" 
-                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-secondary/10 rounded-full blur-xl group-hover:bg-secondary/20 transition-all"></div>
+          
+          {/* Certificate Slider */}
+          <div className="relative max-w-4xl mx-auto animate-reveal">
+            {/* Main Slider Container */}
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-6 md:p-8 border-2 border-primary/20">
+              {/* Top Gradient Bar */}
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary via-secondary to-primary"></div>
+              
+              {/* Slides Container */}
+              <div className="relative overflow-hidden" style={{ minHeight: '500px' }}>
+                {certificates.map((cert, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                      index === currentCertSlide
+                        ? 'opacity-100 translate-x-0'
+                        : index < currentCertSlide
+                        ? 'opacity-0 -translate-x-full'
+                        : 'opacity-0 translate-x-full'
+                    }`}
+                  >
+                    <div className="flex items-center justify-center h-full p-4">
+                      <img
+                        src={cert.src}
+                        alt={cert.alt}
+                        className="w-full h-auto object-contain rounded-lg shadow-lg"
+                        style={{ maxHeight: '450px' }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Slide Counter */}
+              <div className="absolute top-4 right-4 bg-primary/90 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                {currentCertSlide + 1} / {certificates.length}
               </div>
             </div>
-            <div className="animate-reveal-right group">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-4 border-2 border-secondary/20 hover:border-secondary/50 transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-primary to-secondary"></div>
-                <div className="relative overflow-hidden rounded-xl">
-                  <img 
-                    src={certificate2} 
-                    alt="Government Certificate 2" 
-                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" 
+            
+            {/* Navigation Controls */}
+            <div className="flex items-center justify-center gap-6 mt-8">
+              <button
+                onClick={() => setCurrentCertSlide((prev) => (prev - 1 + certificates.length) % certificates.length)}
+                className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 border-2 border-primary/20"
+                aria-label="Previous certificate"
+              >
+                <ChevronLeft size={24} className="text-primary" />
+              </button>
+              
+              {/* Dot Indicators */}
+              <div className="flex gap-2">
+                {certificates.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentCertSlide(index)}
+                    className={`transition-all duration-300 rounded-full ${
+                      index === currentCertSlide
+                        ? 'w-8 h-3 bg-primary'
+                        : 'w-3 h-3 bg-primary/30 hover:bg-primary/50'
+                    }`}
+                    aria-label={`Go to certificate ${index + 1}`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-secondary/10 rounded-full blur-xl group-hover:bg-secondary/20 transition-all"></div>
+                ))}
               </div>
+              
+              <button
+                onClick={() => setCurrentCertSlide((prev) => (prev + 1) % certificates.length)}
+                className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 border-2 border-primary/20"
+                aria-label="Next certificate"
+              >
+                <ChevronRight size={24} className="text-primary" />
+              </button>
             </div>
           </div>
+          
           <div className="text-center mt-10 animate-reveal">
-            <Link to="/certificates" className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-primary-foreground rounded-xl font-semibold hover:bg-secondary/90 transition-all shadow-lg hover:shadow-xl active:scale-[0.97]">
+            <Link to="/certificates" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl active:scale-[0.97]">
               View All Certificates <ArrowRight size={18} />
             </Link>
           </div>

@@ -27,7 +27,7 @@ const About = () => {
               <span className="text-secondary text-sm font-semibold uppercase tracking-wider">Who We Are</span>
               <h2 className="text-3xl font-bold text-foreground mt-2 mb-4">Pestigo Pest Control — Your Trusted Partner</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Founded in 2026, Pestigo Pest Control is a government-registered pest management company based in South Delhi. Under the leadership of Vishwajeet Kumar, we have quickly grown to become one of the most trusted names in pest control services across Delhi NCR.
+                Founded in 2026, Pestigo Pest Control is a government-registered pest management company based in Delhi NCR. Under the leadership of Vishwajeet Kumar, we have quickly grown to become one of the most trusted names in pest control services across Delhi NCR.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 We specialize in residential and commercial pest control using advanced, eco-friendly treatments. Our team of trained professionals is committed to delivering safe, effective, and affordable pest management solutions. Every service is backed by our satisfaction guarantee.

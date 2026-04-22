@@ -41,7 +41,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-sm">Address</p>
-                    <p className="text-muted-foreground text-sm">Plot No. F/F 483 Ground Floor, Nearby Pracheen Shiv Mandir (Jalam Mohalla), Zalim Mohalla, Tughlaqabad Institutional Area, Mehrauli Badarpur Road, South Delhi, Delhi 110062</p>
+                    <p className="text-muted-foreground text-sm">Plot No. F/F 483 Ground Floor, Nearby Pracheen Shiv Mandir (Jalam Mohalla), Zalim Mohalla, Tughlaqabad Institutional Area, Mehrauli Badarpur Road, Delhi NCR, Delhi 110062</p>
                   </div>
                 </div>
                 <div className="flex gap-3 items-start">
@@ -50,8 +50,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-sm">Phone</p>
-                    <a href="tel:6205840761" className="text-muted-foreground text-sm hover:text-secondary transition-colors block">6205840761</a>
-                    <a href="tel:9955562637" className="text-muted-foreground text-sm hover:text-secondary transition-colors block mt-1">9955562637</a>
+                    <a href="tel:+91 6205840761" className="text-muted-foreground text-sm hover:text-secondary transition-colors block">6205840761</a>
+                    <a href="tel:+91 9955562637" className="text-muted-foreground text-sm hover:text-secondary transition-colors block mt-1">9955562637</a>
                   </div>
                 </div>
                 <div className="flex gap-3 items-start">

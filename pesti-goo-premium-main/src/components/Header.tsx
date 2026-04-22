@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import logo from '@/assets/logo.jpeg';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import logo from '@/assets/new-logo.jpeg';
 
 const navItems = [
   { label: 'Home', path: '/' },
@@ -12,8 +12,20 @@ const navItems = [
   { label: 'Contact', path: '/contact' },
 ];
 
+const serviceItems = [
+  { label: 'Cockroach Control', path: '/services/cockroach-control' },
+  { label: 'Termite Control', path: '/services/termite-control' },
+  { label: 'Bed Bug Control', path: '/services/bed-bug-control' },
+  { label: 'Mosquito Control', path: '/services/mosquito-control' },
+  { label: 'Rodent Control', path: '/services/rodent-control' },
+  { label: 'General Pest Control', path: '/services/general-pest-control' },
+  { label: 'Residential Pest Control', path: '/services/residential-pest-control' },
+  { label: 'Commercial Pest Control', path: '/services/commercial-pest-control' },
+];
+
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -30,17 +42,58 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                location.pathname === item.path
-                  ? 'text-secondary font-semibold'
-                  : 'text-foreground hover:text-secondary'
-              }`}
-            >
-              {item.label}
-            </Link>
+            item.label === 'Services' ? (
+              <div
+                key={item.path}
+                className="relative"
+                onMouseEnter={() => setServicesDropdownOpen(true)}
+                onMouseLeave={() => setServicesDropdownOpen(false)}
+              >
+                <Link
+                  to={item.path}
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1 ${
+                    location.pathname.startsWith('/services')
+                      ? 'text-secondary font-semibold'
+                      : 'text-foreground hover:text-secondary'
+                  }`}
+                >
+                  {item.label}
+                  <ChevronDown size={16} className={`transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
+                </Link>
+                
+                {servicesDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-1 w-56 bg-card rounded-lg shadow-xl border border-border py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                    <Link
+                      to="/services"
+                      className="block px-4 py-2 text-sm font-semibold text-secondary border-b border-border hover:bg-muted transition-colors"
+                    >
+                      All Services
+                    </Link>
+                    {serviceItems.map((service) => (
+                      <Link
+                        key={service.path}
+                        to={service.path}
+                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-secondary transition-colors"
+                      >
+                        {service.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  location.pathname === item.path
+                    ? 'text-secondary font-semibold'
+                    : 'text-foreground hover:text-secondary'
+                }`}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
           <a
             href="tel:9955562637"
@@ -65,18 +118,46 @@ const Header = () => {
         <div className="lg:hidden border-t border-border bg-card">
           <nav className="flex flex-col py-2 px-4">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setMobileOpen(false)}
-                className={`px-3 py-3 rounded-md text-sm font-medium transition-colors ${
-                  location.pathname === item.path
-                    ? 'text-secondary bg-muted font-semibold'
-                    : 'text-foreground hover:bg-muted'
-                }`}
-              >
-                {item.label}
-              </Link>
+              item.label === 'Services' ? (
+                <div key={item.path}>
+                  <Link
+                    to={item.path}
+                    onClick={() => setMobileOpen(false)}
+                    className={`block px-3 py-3 rounded-md text-sm font-medium transition-colors ${
+                      location.pathname.startsWith('/services')
+                        ? 'text-secondary bg-muted font-semibold'
+                        : 'text-foreground hover:bg-muted'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                  <div className="ml-4 mt-1 space-y-1">
+                    {serviceItems.map((service) => (
+                      <Link
+                        key={service.path}
+                        to={service.path}
+                        onClick={() => setMobileOpen(false)}
+                        className="block px-3 py-2 text-sm text-foreground hover:bg-muted hover:text-secondary transition-colors rounded-md"
+                      >
+                        {service.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setMobileOpen(false)}
+                  className={`px-3 py-3 rounded-md text-sm font-medium transition-colors ${
+                    location.pathname === item.path
+                      ? 'text-secondary bg-muted font-semibold'
+                      : 'text-foreground hover:bg-muted'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
             <a
               href="tel:9955562637"

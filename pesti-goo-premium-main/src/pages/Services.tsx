@@ -7,6 +7,7 @@ const services = [
   { 
     icon: Bug, 
     title: 'Cockroach Control', 
+    path: '/services/cockroach-control',
     problem: 'Cockroaches spread diseases, contaminate food, cause allergies, and multiply rapidly in kitchens and bathrooms.',
     solution: 'Advanced gel baiting, residual spraying, and crack-and-crevice treatment to eliminate cockroaches at every life stage with long-lasting protection.',
     price: '₹1,499',
@@ -15,6 +16,7 @@ const services = [
   { 
     icon: Bug, 
     title: 'Termite Control', 
+    path: '/services/termite-control',
     problem: 'Termites silently destroy wooden structures, furniture, and building foundations, causing lakhs of rupees in damage.',
     solution: 'Pre and post-construction chemical barrier and baiting systems that protect your property from destructive termite colonies.',
     price: '₹2,999',
@@ -23,6 +25,7 @@ const services = [
   { 
     icon: Bug, 
     title: 'Bed Bug Control', 
+    path: '/services/bed-bug-control',
     problem: 'Bed bugs cause itchy bites, sleepless nights, skin infections, and quickly spread through bedrooms and furniture.',
     solution: 'Combination of chemical treatment, steam cleaning, and targeted spraying to destroy bed bugs and their eggs completely.',
     price: '₹1,999',
@@ -31,6 +34,7 @@ const services = [
   { 
     icon: Zap, 
     title: 'Mosquito Control', 
+    path: '/services/mosquito-control',
     problem: 'Mosquitoes spread deadly diseases like dengue, malaria, and chikungunya, putting your family at serious risk.',
     solution: 'Comprehensive fogging, larvicide application, and residual spraying to eliminate breeding areas and reduce mosquito populations.',
     price: '₹999',
@@ -39,6 +43,7 @@ const services = [
   { 
     icon: Rat, 
     title: 'Rodent Control', 
+    path: '/services/rodent-control',
     problem: 'Rats and mice damage property, contaminate food, spread diseases, and chew through electrical wires causing fire hazards.',
     solution: 'Professional bait stations, traps, and exclusion techniques with entry point sealing to eliminate rodents permanently.',
     price: '₹1,799',
@@ -47,6 +52,7 @@ const services = [
   { 
     icon: Shield, 
     title: 'General Pest Control', 
+    path: '/services/general-pest-control',
     problem: 'Multiple pests like ants, spiders, silverfish, and cockroaches infest homes and offices, creating unhygienic conditions.',
     solution: 'Comprehensive multi-pest treatment plan covering all common pests with regular maintenance and seasonal prevention.',
     price: '₹1,299',
@@ -55,6 +61,7 @@ const services = [
   { 
     icon: Home, 
     title: 'Residential Pest Control', 
+    path: '/services/residential-pest-control',
     problem: 'Households face recurring pest problems that threaten family health, especially children and elderly members.',
     solution: 'Family-safe, odorless pest management solutions tailored for homes, apartments, and villas with minimal disruption.',
     price: '₹999',
@@ -63,6 +70,7 @@ const services = [
   { 
     icon: Building2, 
     title: 'Commercial Pest Control', 
+    path: '/services/commercial-pest-control',
     problem: 'Businesses risk reputation damage, health code violations, and customer loss due to pest infestations.',
     solution: 'Specialized pest control with AMC contracts, regular inspections, and treatments to maintain hygiene standards.',
     price: '₹2,499',
@@ -88,7 +96,7 @@ const Services = () => {
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <div key={service.title} className="animate-reveal bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-border group hover:-translate-y-1">
+                <Link key={service.title} to={service.path} className="animate-reveal bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-border group hover:-translate-y-1 block">
                   {/* Header */}
                   <div className={`bg-gradient-to-r ${service.color} p-6 flex items-center gap-4 relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -140,17 +148,12 @@ const Services = () => {
                           <p className="text-xl font-bold text-secondary">{service.price}</p>
                         </div>
                       </div>
-                      <a 
-                        href={`https://wa.me/919955562637?text=Hi, I want to book ${encodeURIComponent(service.title)} service. Please share more details.`} 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 cta-gradient text-primary-foreground rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl hover:shadow-secondary/30 transition-all active:scale-[0.97]"
-                      >
-                        Book Now <ArrowRight size={16} />
-                      </a>
+                      <div className="inline-flex items-center gap-2 px-6 py-3 cta-gradient text-primary-foreground rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl hover:shadow-secondary/30 transition-all active:scale-[0.97]">
+                        View Details <ArrowRight size={16} />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
