@@ -5,6 +5,8 @@ import Layout from '@/components/Layout';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import whatsappImg1 from '@/assets/about-team.jpg';
 import whatsappImg2 from '@/assets/team-group.jpg';
+import trustedExperts from '@/assets/trusted-experts.png';
+import heroBeautiful from '@/assets/hero-beautiful.png';
 import certificate1 from '@/assets/certificate-1.jpeg';
 import certificate2 from '@/assets/certificate-2.jpeg';
 import certificate3 from '@/assets/certificate-3.jpeg';
@@ -15,6 +17,13 @@ import pestControl1 from '@/assets/pest-control-1.jpg';
 import pestControl2 from '@/assets/pest-control-2.jpg';
 import pestControl3 from '@/assets/pest-control-3.jpg';
 import whatsappBanner from '@/assets/whatsapp-banner.jpeg';
+import geminiImage from '@/assets/gemini-generated-image.png';
+import geminiImage1 from '@/assets/gemini-image-1.png';
+import geminiImage2 from '@/assets/gemini-image-2.png';
+import geminiImage3 from '@/assets/gemini-image-3.png';
+import geminiService1 from '@/assets/gemini-service-1.png';
+import geminiService2 from '@/assets/gemini-service-2.png';
+import geminiService3 from '@/assets/gemini-service-3.png';
 
 const stats = [
   { label: 'Happy Customers', value: 1200, suffix: '+' },
@@ -121,7 +130,7 @@ const Index = () => {
       <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
         <div className="absolute inset-0">
           <img 
-            src="https://simplybirding.co.za/wp-content/uploads/2025/02/Pest-control.jpg" 
+            src={heroBeautiful} 
             alt="Professional pest control service" 
             className="w-full h-full object-cover" 
           />
@@ -175,45 +184,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WhatsApp Banner */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-secondary/10 via-primary/5 to-secondary/10">
-        <div className="container-custom px-4">
-          <div className="max-w-5xl mx-auto animate-reveal">
-            <div className="relative group">
-              {/* Decorative Elements */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-secondary/20 via-primary/20 to-secondary/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
-              
-              {/* Main Image Container */}
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white dark:border-gray-800">
-                <img 
-                  src={whatsappBanner} 
-                  alt="Pestigo Pest Control Professional Service" 
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" 
-                />
-                
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Corner Decorations */}
-                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-secondary/30 to-transparent rounded-br-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-secondary/30 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-              
-              {/* Floating Badge */}
-              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
-                <div className="bg-white dark:bg-gray-900 px-8 py-4 rounded-full shadow-xl border-2 border-secondary/30">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
-                    <span className="text-sm font-bold text-gray-800 dark:text-white">Professional Pest Control Services</span>
-                    <div className="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* About Preview */}
       <section className="section-padding">
         <div className="container-custom">
@@ -239,93 +209,12 @@ const Index = () => {
             <div className="animate-reveal-right">
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-xl">
-                  <img src={whatsappImg1} alt="Pest control experts team" className="w-full h-80 object-cover" />
+                  <img src={trustedExperts} alt="Trusted pest control experts in Delhi NCR" className="w-full h-80 object-contain bg-gray-50" />
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary/20 rounded-full blur-3xl"></div>
                 <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Service Gallery */}
-      <section className="section-padding bg-gradient-to-br from-secondary/5 via-primary/5 to-accent/5">
-        <div className="container-custom">
-          <div className="text-center mb-12 animate-reveal">
-            <span className="text-secondary text-sm font-semibold uppercase tracking-wider">Our Work</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Professional Pest Control in Action</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">See our expert technicians delivering top-quality pest control services across Delhi NCR.</p>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {/* Large Featured Image */}
-            <div className="lg:col-span-2 animate-reveal-left group">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl h-96 lg:h-[500px]">
-                <img 
-                  src={pestControl1} 
-                  alt="Professional pest control technician at work" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-white text-xl font-bold mb-2">Expert Treatment</h3>
-                    <p className="text-white/90 text-sm">Our trained professionals using advanced equipment</p>
-                  </div>
-                </div>
-                <div className="absolute top-4 left-4 px-4 py-2 bg-secondary/90 backdrop-blur-sm rounded-full">
-                  <span className="text-white text-xs font-bold">Featured</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Side Images Stack */}
-            <div className="flex flex-col gap-6">
-              <div className="animate-reveal-right group">
-                <div className="relative overflow-hidden rounded-2xl shadow-xl h-48 lg:h-[240px]">
-                  <img 
-                    src={pestControl2} 
-                    alt="Pest control worker with protective gear" 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <p className="text-white text-sm font-semibold">Safety First Approach</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="animate-reveal-right group" style={{ animationDelay: '0.2s' }}>
-                <div className="relative overflow-hidden rounded-2xl shadow-xl h-72 lg:h-[400px]">
-                  <img 
-                    src={pestControl3} 
-                    alt="Pest control service in residential area" 
-                    className="w-full h-full object-contain bg-gray-100 transition-transform duration-500 group-hover:scale-110" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <p className="text-white text-sm font-semibold">Residential & Commercial</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats Overlay */}
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 animate-reveal">
-            {[
-              { number: '1200+', label: 'Happy Clients' },
-              { number: '3500+', label: 'Projects Done' },
-              { number: '5+', label: 'Years Experience' },
-              { number: '100%', label: 'Satisfaction' },
-            ].map((stat) => (
-              <div key={stat.label} className="bg-card rounded-xl p-4 text-center shadow-md border border-border hover:shadow-lg transition-shadow">
-                <p className="text-2xl md:text-3xl font-bold text-secondary mb-1">{stat.number}</p>
-                <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -387,6 +276,130 @@ const Index = () => {
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Image Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-white via-gray-50 to-white">
+        <div className="container-custom px-4">
+          <div className="max-w-6xl mx-auto animate-reveal">
+            <div className="text-center mb-12">
+              <span className="text-primary text-sm font-semibold uppercase tracking-wider">Professional Excellence</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Committed to Quality Service</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">Delivering exceptional pest control solutions with professionalism and care</p>
+            </div>
+            
+            <div className="relative group">
+              {/* Decorative Background */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-3xl blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-700"></div>
+              
+              {/* Main Image Container */}
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white">
+                <img 
+                  src={geminiImage} 
+                  alt="Professional pest control service excellence" 
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Corner Accents */}
+                <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-primary/30 to-transparent rounded-br-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tl from-secondary/30 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              
+              {/* Floating Badge */}
+              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+                <div className="bg-white px-10 py-5 rounded-full shadow-2xl border-2 border-primary/30">
+                  <div className="flex items-center gap-4">
+                    <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                    <span className="text-base font-bold text-gray-800">Trusted by 1200+ Happy Customers</span>
+                    <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Professional Service Gallery */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+        <div className="container-custom px-4">
+          <div className="text-center mb-12 animate-reveal">
+            <span className="text-secondary text-sm font-semibold uppercase tracking-wider">Our Excellence</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Professional Pest Control Services</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Delivering outstanding results with advanced techniques and eco-friendly solutions</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* Image 1 */}
+            <div className="animate-reveal group">
+              <div className="relative overflow-hidden rounded-2xl shadow-xl bg-white">
+                <div className="absolute -inset-2 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-75 transition-opacity duration-500"></div>
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={geminiImage1} 
+                    alt="Professional pest control service" 
+                    className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <p className="text-white font-semibold text-lg">Expert Technicians</p>
+                    <p className="text-white/90 text-sm">Trained professionals at your service</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                  <CheckCircle size={24} className="text-primary" />
+                </div>
+              </div>
+            </div>
+
+            {/* Image 2 */}
+            <div className="animate-reveal group" style={{ animationDelay: '0.2s' }}>
+              <div className="relative overflow-hidden rounded-2xl shadow-xl bg-white">
+                <div className="absolute -inset-2 bg-gradient-to-r from-secondary/30 to-primary/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-75 transition-opacity duration-500"></div>
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={geminiImage2} 
+                    alt="Quality pest control treatment" 
+                    className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <p className="text-white font-semibold text-lg">Advanced Solutions</p>
+                    <p className="text-white/90 text-sm">Latest technology and methods</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                  <Award size={24} className="text-secondary" />
+                </div>
+              </div>
+            </div>
+
+            {/* Image 3 */}
+            <div className="animate-reveal group" style={{ animationDelay: '0.4s' }}>
+              <div className="relative overflow-hidden rounded-2xl shadow-xl bg-white">
+                <div className="absolute -inset-2 bg-gradient-to-r from-primary/30 via-secondary/30 to-primary/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-75 transition-opacity duration-500"></div>
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={geminiImage3} 
+                    alt="Complete pest management" 
+                    className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-secondary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <p className="text-white font-semibold text-lg">Guaranteed Results</p>
+                    <p className="text-white/90 text-sm">100% satisfaction guaranteed</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                  <Shield size={24} className="text-primary" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -506,31 +519,72 @@ const Index = () => {
       </section>
 
       {/* Image Gallery */}
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-gradient-to-br from-white via-gray-50 to-white">
         <div className="container-custom">
           <div className="text-center mb-12 animate-reveal">
             <span className="text-secondary text-sm font-semibold uppercase tracking-wider">Our Work</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">See Our Professional Service in Action</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-4">Experience the quality and professionalism of our pest control services</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="animate-reveal-left group">
-              <div className="relative overflow-hidden rounded-2xl shadow-xl">
-                <img 
-                  src={whatsappImg1} 
-                  alt="Professional pest control service" 
-                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="animate-reveal group">
+              <div className="relative overflow-hidden rounded-2xl shadow-xl bg-white border-2 border-primary/10">
+                <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-75 transition-opacity duration-500"></div>
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={geminiService1} 
+                    alt="Professional pest control service" 
+                    className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <p className="text-white font-semibold text-lg">Professional Service</p>
+                    <p className="text-white/90 text-sm">Expert pest control solutions</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                  <CheckCircle size={20} className="text-primary" />
+                </div>
               </div>
             </div>
-            <div className="animate-reveal-right group">
-              <div className="relative overflow-hidden rounded-2xl shadow-xl">
-                <img 
-                  src={whatsappImg2} 
-                  alt="Pest control treatment" 
-                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="animate-reveal group" style={{ animationDelay: '0.2s' }}>
+              <div className="relative overflow-hidden rounded-2xl shadow-xl bg-white border-2 border-secondary/10">
+                <div className="absolute -inset-2 bg-gradient-to-r from-secondary/20 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-75 transition-opacity duration-500"></div>
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={geminiService2} 
+                    alt="Quality pest control treatment" 
+                    className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <p className="text-white font-semibold text-lg">Quality Treatment</p>
+                    <p className="text-white/90 text-sm">Advanced techniques & products</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                  <Award size={20} className="text-secondary" />
+                </div>
+              </div>
+            </div>
+            <div className="animate-reveal group" style={{ animationDelay: '0.4s' }}>
+              <div className="relative overflow-hidden rounded-2xl shadow-xl bg-white border-2 border-primary/10">
+                <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-75 transition-opacity duration-500"></div>
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={geminiService3} 
+                    alt="Complete pest management" 
+                    className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-secondary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <p className="text-white font-semibold text-lg">Complete Protection</p>
+                    <p className="text-white/90 text-sm">Guaranteed pest-free results</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                  <Shield size={20} className="text-primary" />
+                </div>
               </div>
             </div>
           </div>
