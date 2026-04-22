@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo.jpeg';
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Company */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <img src={logo} alt="Pestigo" className="h-10 w-10 object-contain brightness-200" />
+            <img src={logo} alt="Pestigo" className="h-14 w-14 object-contain brightness-200" />
             <span className="text-lg font-bold">Pestigo Pest Control</span>
           </div>
           <p className="text-sm opacity-80 leading-relaxed mb-4">

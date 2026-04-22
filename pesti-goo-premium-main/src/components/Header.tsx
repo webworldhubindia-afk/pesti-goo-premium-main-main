@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo.jpeg';
 
 const navItems = [
   { label: 'Home', path: '/' },
@@ -20,10 +20,10 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-card shadow-md">
       <div className="container-custom flex items-center justify-between py-3 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Pestigo Pest Control" className="h-14 w-14 object-contain" />
+          <img src={logo} alt="Pestigo Pest Control" className="h-16 w-16 object-contain" />
           <div className="leading-tight">
-            <span className="text-lg font-bold text-primary tracking-tight">Pestigo</span>
-            <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Pest Control</span>
+            <span className="text-lg font-bold text-primary tracking-tight"></span>
+            <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-medium"></span>
           </div>
         </Link>
 
